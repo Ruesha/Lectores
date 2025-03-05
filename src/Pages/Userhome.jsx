@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Cart from "./Cart"; // Import Cart Component
 import Logo from "../assets/images/lectores-removebg-preview.png";
 import booksBg from "../assets/images/books.avif";
 import { MdOutlineShoppingCart } from "react-icons/md";
@@ -7,23 +6,19 @@ import { RxAvatar } from "react-icons/rx";
 import { AiOutlineLoading3Quarters } from "react-icons/ai"; // Import loading icon
 import { FaSearch } from "react-icons/fa"; // Search icon
 import { IoFilterOutline } from "react-icons/io5"; // Filter icon
+import {Link} from 'react-router-dom'
 
 const Welcome = () => {
   const [allBooks, setAllBooks] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [cart, setCart] = useState([]);
-  const [isCartOpen, setIsCartOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("all");
-  
-  // Reading list states
   const [wantToRead, setWantToRead] = useState([]);
   const [currentlyReading, setCurrentlyReading] = useState([]);
   const [alreadyRead, setAlreadyRead] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isSearchLoading, setIsSearchLoading] = useState(true);
-
-  // Advanced search states
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [authorSearchQuery, setAuthorSearchQuery] = useState("");
@@ -31,11 +26,11 @@ const Welcome = () => {
   const [isAuthorSearchOpen, setIsAuthorSearchOpen] = useState(false);
   const [isAdvancedSearchOpen, setIsAdvancedSearchOpen] = useState(false);
   const [selectedAuthor, setSelectedAuthor] = useState("");
-  const [searchType, setSearchType] = useState("general"); // general, title, author
+  const [searchType, setSearchType] = useState("general");
   const [sortOption, setSortOption] = useState("");
   const [isAuthorSearchLoading, setIsAuthorSearchLoading] = useState(false);
 
-  // Fetch books based on search parameters
+ 
   useEffect(() => {
     const fetchBooks = async () => {
       if (activeTab === "all") {
@@ -301,9 +296,9 @@ const Welcome = () => {
         <div className="flex items-center gap-4 text-2xl">
           {/* Shopping Cart Button */}
           <div className="relative">
-            <button aria-label="Shopping Cart" onClick={() => setIsCartOpen(true)}>
+            <Link to="/cart" aria-label="Shopping Cart">
               <MdOutlineShoppingCart className="cursor-pointer hover:text-lime-500 transition text-3xl" />
-            </button>
+            </Link>
             {cart.length > 0 && (
               <span className="absolute -top-2 -right-2 bg-lime-500 text-white text-xs font-bold px-2 py-1 rounded-full">
                 {cart.length}
@@ -313,7 +308,7 @@ const Welcome = () => {
 
           {/* User Profile Icon */}
           <button aria-label="User Profile">
-            <RxAvatar className="cursor-pointer hover:text-lime-500 transition" />
+            <RxAvatar className="cursor-pointer hover:text-lime-500 transition text-[30px] mb-1" />
           </button>
         </div>
       </div>
@@ -609,9 +604,6 @@ const Welcome = () => {
           </div>
         )}
       </div>
-
-      {/* Cart Modal */}
-      {isCartOpen && <Cart cart={cart} setCart={setCart} closeCart={() => setIsCartOpen(false)} />}
     </div>
   );
 };

@@ -29,7 +29,7 @@ const Footer = () => {
           </p>
           <div className='mt-10'>
             <input type="text" placeholder="Enter your email....." className='bg-white text-black px-2 w-[300px] py-3 rounded-l-sm'/>
-            <button className='px-2 py-[11.42px] bg-lime-400 rounded-r-sm hover:bg-transparent border border-lime-400 text-black hover:text-lime-400 transition-all duration-300'>Get free books</button>
+            <button className='px-2 py-[11.40px] bg-lime-400 rounded-r-sm hover:bg-transparent border border-lime-400 text-black hover:text-lime-400 transition-all duration-300'>Get free books</button>
           </div>
         </div>
       </div> 

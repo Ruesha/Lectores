@@ -7,6 +7,7 @@ import Login from './Pages/Login';
 import Signp from './Pages/Signp.jsx';
 import About from './Pages/About.jsx';
 import Welcome from './Pages/Userhome.jsx';
+import Cart from './Pages/Cart.jsx';
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
   {path:"/signup",element:<Signp/>},
   { path: "/about", element: <About /> },
   { path: "/welcome", element: <Welcome /> },
+  { path: "/cart", element: <Cart /> },
 ]);
 
 createRoot(document.getElementById('root')).render(
