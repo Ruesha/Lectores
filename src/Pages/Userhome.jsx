@@ -307,9 +307,9 @@ const Welcome = () => {
           </div>
 
           {/* User Profile Icon */}
-          <button aria-label="User Profile">
+          <Link to="/userdashboard" aria-label="User Profile">
             <RxAvatar className="cursor-pointer hover:text-lime-500 transition text-[30px] mb-1" />
-          </button>
+          </Link>
         </div>
       </div>
 

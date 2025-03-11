@@ -8,6 +8,8 @@ import Signp from './Pages/Signp.jsx';
 import About from './Pages/About.jsx';
 import Welcome from './Pages/Userhome.jsx';
 import Cart from './Pages/Cart.jsx';
+import UserDashboard from './Pages/UserDashboard.jsx';
+import Writerhome from './Pages/Writerhome.jsx';
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -16,6 +18,8 @@ const router = createBrowserRouter([
   { path: "/about", element: <About /> },
   { path: "/welcome", element: <Welcome /> },
   { path: "/cart", element: <Cart /> },
+  { path: "/userdashboard", element: <UserDashboard /> },
+  { path: "/writerhome", element: <Writerhome /> },
 ]);
 
 createRoot(document.getElementById('root')).render(
