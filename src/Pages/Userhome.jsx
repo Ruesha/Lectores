@@ -3,7 +3,7 @@ import Logo from "../assets/images/lectores-removebg-preview.png";
 import booksBg from "../assets/images/books.avif";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { RxAvatar } from "react-icons/rx";
-import { AiOutlineLoading3Quarters } from "react-icons/ai"; // Import loading icon
+import { LuLoader } from "react-icons/lu";
 import { FaSearch } from "react-icons/fa"; // Search icon
 import { IoFilterOutline } from "react-icons/io5"; // Filter icon
 import {Link} from 'react-router-dom'
@@ -39,7 +39,7 @@ const Welcome = () => {
         // Build the search URL based on the search type and parameters
         let url = "https://openlibrary.org/search.json?";
         
-        if (searchType === "general" && searchQuery) {
+        if (searchType === "general" && searchQuery) {  
           url += `q=${encodeURIComponent(searchQuery)}`;
         } else if (searchType === "title" && searchQuery) {
           url += `title=${encodeURIComponent(searchQuery)}`;
@@ -207,7 +207,7 @@ const Welcome = () => {
   // Loading spinner component
   const LoadingSpinner = () => (
     <div className="flex flex-col items-center justify-center h-64">
-      <AiOutlineLoading3Quarters className="animate-spin text-lime-500 text-4xl mb-2" />
+      <LuLoader className="animate-spin text-lime-500 text-4xl mb-2" />
       <p className="text-gray-600">Loading books...</p>
     </div>
   );
@@ -388,7 +388,7 @@ const Welcome = () => {
                       <div className="max-h-48 overflow-y-auto p-2">
                         {isAuthorSearchLoading ? (
                           <div className="flex justify-center p-4">
-                            <AiOutlineLoading3Quarters className="animate-spin text-lime-500 text-xl" />
+                            <LuLoader className="animate-spin text-lime-500 text-xl" />
                           </div>
                         ) : authorResults.length > 0 ? (
                           authorResults.map((author) => (

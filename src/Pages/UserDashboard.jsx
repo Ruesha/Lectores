@@ -21,7 +21,7 @@ const chartData = {
       borderWidth: 2,
       fill: true,
     },
-  ],
+  ], 
 };
 
 const chartOptions = {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; 
 import library from "../assets/images/library-with-books.jpg";
+import booksBg from "../assets/images/books.avif"
 
 const Login = () => {
   const [users, setUsers] = useState([]);
@@ -32,7 +33,13 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row gap-10 min-h-screen">
+    <div
+    className="min-h-screen pb-12"
+    style={{
+      backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(${booksBg})`,
+    }}>
+         
+           <div className="flex flex-col md:flex-row gap-10 min-h-screen">
       {/* Left Side - Image */}
       <div className="md:w-1/2">
         <img src={library} alt="Library" className="h-screen w-full object-cover" />
@@ -121,6 +128,8 @@ const Login = () => {
         </div>
       </div>
     </div>
+    </div>
+   
   );
 };
 
